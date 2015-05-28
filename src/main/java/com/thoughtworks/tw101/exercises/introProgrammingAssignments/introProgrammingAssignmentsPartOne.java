@@ -53,12 +53,6 @@ public class introProgrammingAssignmentsPartOne {
         }
     }
 
-    private static void printSpaceForCentering(int sideSpaces) {
-        for(int spaceCtr = 0; spaceCtr < sideSpaces; spaceCtr++){
-            System.out.print(" ");
-        }
-    }
-
     // Runs the various assignments
         public static void main(String[] args) {
             int n; // Input number
@@ -91,7 +85,20 @@ public class introProgrammingAssignmentsPartOne {
             drawAnIsoscelesTriangle(n);
             printFormatting();
 
+//            for(int i=0;i<8;i++) {
+//                System.out.println("*");
+//            }
+
         }
+
+    /*
+    Adds spaces to the left or right of an asterisk to create the centered triangle.
+    */
+    private static void printSpaceForCentering(int sideSpaces) {
+        for(int spaceCtr = 0; spaceCtr < sideSpaces; spaceCtr++){
+            System.out.print(" ");
+        }
+    }
 
     private static void printFormatting() {
         System.out.println();
