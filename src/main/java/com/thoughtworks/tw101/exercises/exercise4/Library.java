@@ -11,7 +11,20 @@ public class Library {
         this.printStream = printStream;
     }
 
+    // Prints out all of the books in the Library whose title contains the string passed in.
     public String printBooksContaining(String partialBookTitle) {
-        return null;
+        String bookTitles = "";
+
+        System.out.println("Containing '" + partialBookTitle + "': ");
+
+        for(String book: books){
+            if(book.contains(partialBookTitle)){
+                bookTitles += book + ", ";
+                System.out.println(book);
+            }
+        }
+        System.out.println();
+
+        return bookTitles;
     }
 }
