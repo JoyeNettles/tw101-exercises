@@ -10,5 +10,7 @@ package com.thoughtworks.tw101.exercises.exercise6;
 public class Main {
     public static void main(String[] args) {
 
+        Orc billy = new Orc();
+
     }
 }

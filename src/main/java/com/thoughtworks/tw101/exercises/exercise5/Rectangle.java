@@ -8,4 +8,11 @@ public class Rectangle {
         this.length = length;
         this.width = width;
     }
+
+    /*
+    Returns the area of the rectangle
+     */
+    public int area(){
+        return length * width;
+    }
 }
