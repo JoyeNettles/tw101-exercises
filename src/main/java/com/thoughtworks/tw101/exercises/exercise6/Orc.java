@@ -13,15 +13,19 @@ public class Orc implements Monster {
     }
 
     public void takeDamage(int amount){
-
+        currentHitpoints -= amount;
     };
 
     public String name(){
-        return null;
+        return name;
     };
 
     public int currentHitpoints(){
-        return -1;
+        return currentHitpoints;
     };
+
+    public String toString(){
+        return "Name: " + name + " Current Hitpoints: " + currentHitpoints;
+    }
 
 }
