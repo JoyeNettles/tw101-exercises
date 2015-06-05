@@ -17,7 +17,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.print("Odd Numbers: ");
+        System.out.print("Odd NumberUtils: ");
         int sum = 0;
 
         for (int i = 1; i < 101; i++) {

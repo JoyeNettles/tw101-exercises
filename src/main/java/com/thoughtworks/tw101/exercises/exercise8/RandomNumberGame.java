@@ -1,8 +1,5 @@
-package com.thoughtworks.tw101.exercises.exercise7;
+package com.thoughtworks.tw101.exercises.exercise8;
 
-// Write a program that chooses a random number between 1 and 100. Then asks the user to enter a guess. If they guess
-// right then tell them they win, otherwise tell them if they guessed too high or low. Keep asking the user to guess
-// until they get the right answer. Use classes to separate the different concerns of this program.
 
 import java.util.Scanner;
 
@@ -27,25 +24,28 @@ public class RandomNumberGame {
      */
     public void playGame(){
         do{
-            int userGuess = getUserGuess();
-            user.getUserGuesses().add(userGuess); // adds guess to user's arraylist
-            isWinner(userGuess, chosenNumber);
+
+                int userGuess = getUserGuess();
+     if(userGuess != -100) {
+         user.getUserGuesses().add(userGuess); // adds guess to user's arraylist
+         isWinner(userGuess, chosenNumber);
+     }
         }while(!wonGame);
     }
 
     /*
     Prompts user for a guess
      */
-    public int getUserGuess(){
-            int n;
+    public int getUserGuess() throws NumberFormatException{
+            int n = -100;
 
             System.out.print("Guess a number between 1 and 100:\t"); // Prompts for input
-            while (!scanner.hasNextInt()) { // Checks to see if input is an integer
-                System.out.print("Enter a number please: \t");
-                scanner.next();
-            }
 
-            n = scanner.nextInt();
+        try {
+            n = Integer.valueOf(scanner.next());
+        }catch(NumberFormatException e){
+            System.out.println("Only numbers please.");
+        }
             return n;
     }
 
@@ -67,7 +67,20 @@ public class RandomNumberGame {
     public void endGame(){
         System.out.println("----------------------- YOU WIN!!! -----------------------");
         System.out.println(chosenNumber + " is correct!");
+        System.out.println("Guesses: " + user.toString());
     }
+
+//    public static void main(String[] args) {
+
+
+//        int n = UserInputCollector.getUserInput(); // retrieves user input
+//
+//        while(n != chosenNumber) {
+//            NumberComparator.notEqualToRandomNumber(chosenNumber, n); // prints correct output after comparing user input to random number
+//            n = UserInputCollector.getUserInput();
+//        }
+//            System.out.println("CORRECT!"); //indicates user has guessed correctly
+//        }
 
 }
 
